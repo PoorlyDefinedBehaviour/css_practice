@@ -1,0 +1,111 @@
+:root {
+  --color-primary: #5930ff;
+  --color-primary-hover: #29e6a7;
+  --color-primary-dark: #039d69;
+  --color-gray100: #f9fbff;
+  --color-gray150: #f4f6fb;
+  --color-gray200: #eef1f6;
+  --color-gray300: #e1e5ee;
+  --color-gray400: #767b91;
+  --color-gray500: #4f546c;
+
+  --radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Montserrat, sans-serif;
+}
+
+body {
+  background-color: var(--color-gray100);
+}
+
+.nav {
+  position: relative;
+  background-color: white;
+  box-sizing: 0x 0px 10px var(--color-gray300);
+  height: 100vh;
+  position: absolute;
+}
+
+.nav__expand {
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-gray400);
+  background-color: white;
+  box-shadow: 0px 0px 10px var(--color-gray300);
+  border-radius: 50%;
+  position: absolute;
+  right: -1rem;
+  top: 1rem;
+  cursor: pointer;
+  transform: rotateZ(-180deg);
+  transition: transform 200ms ease-in-out;
+}
+
+.nav__expand:hover {
+  fill: var(--color-gray500);
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav__list_item {
+  list-style: none;
+  transition: all 200ms ease-in;
+  padding: 1rem 1.5rem;
+  border-left: 6px solid transparent;
+  cursor: pointer;
+}
+
+.nav__list_item:first-child {
+  margin-bottom: 2rem;
+}
+
+.nav__list_item:hover {
+  background-color: var(--color-gray150);
+}
+
+.nav__list_item > a {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--color-gray400);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav__list_item > a > svg {
+  fill: var(--color-gray400);
+  width: 2rem;
+}
+
+.nav__list_item-active {
+  background-color: var(--color-gray200);
+  border-left: 6px solid var(--color-primary);
+}
+
+.nav__list_item-active > a > svg {
+  fill: var(--color-primary);
+}
+
+.nav__list_item-active > a > p {
+  color: var(--color-primary);
+}
+
+.nav-closed > .nav__expand {
+  transform: rotateZ(0deg);
+}
+
+.nav-closed p {
+  display: none;
+}
