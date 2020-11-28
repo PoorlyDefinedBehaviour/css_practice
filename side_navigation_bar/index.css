@@ -1,0 +1,78 @@
+:root {
+  --color-primary: #6aeeb5;
+  --color-primary-hover: #29e6a7;
+  --color-primary-dark: #039d69;
+  --color-gray100: #f0f7f8;
+  --color-gray200: #cfd8dc;
+  --color-gray300: #a7b7be;
+  --color-gray400: #6b7e86;
+  --color-gray500: #425a65;
+
+  --radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Montserrat, sans-serif;
+}
+
+body {
+  background-color: var(--color-gray100);
+}
+
+.nav__list {
+  background-color: white;
+  box-shadow: 0px 0px 10px var(--color-gray200);
+  padding: 1rem 0;
+  width: 5rem;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+.nav__item {
+  list-style: none;
+  position: relative;
+}
+
+.nav__item:first-child {
+  padding-bottom: 2rem;
+}
+
+.nav__item svg {
+  fill: var(--color-gray400);
+  width: 2.2rem;
+  transition: all 200ms ease-in;
+}
+
+.nav__item svg:hover {
+  fill: var(--color-gray500);
+}
+
+.nav__item::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 4rem;
+  top: -0.25rem;
+  background-color: var(--color-gray500);
+  color: white;
+  padding: 0.8rem;
+  border-radius: var(--radius);
+  transition: all 200ms ease-in;
+  opacity: 0;
+}
+
+.nav__item:hover::before {
+  opacity: 1;
+  left: 4.5rem;
+}
