@@ -1,0 +1,130 @@
+:root {
+  --color-background: #eceff1;
+  --color-white: #fff;
+  --color-primary: #aa00ff;
+  --color-gray: #263238;
+  --font-size: 16px;
+  --border-radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  font-size: var(--font-size);
+  color: var(--color-gray);
+  background-color: var(--color-background);
+}
+
+.navbar {
+  width: 100vw;
+  background-color: var(--color-primary);
+}
+
+.navbar > ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3em;
+}
+
+.navbar > ul > li {
+  cursor: pointer;
+  padding-right: 2em;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+.navbar > ul > li > svg {
+  margin-top: 0.5em;
+  fill: var(--color-white);
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.navbar > ul > li:first-child {
+  margin-right: auto;
+  margin-left: 2em;
+}
+
+.main {
+  margin: 1em 2em;
+}
+
+.main__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5em;
+}
+
+.main__search {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  width: 15em;
+  height: 2.5em;
+  padding: auto;
+  display: flex;
+  align-items: center;
+}
+
+.material-icons {
+  padding: 0 0.2em;
+  font-size: 1.5em;
+}
+
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5em;
+}
+
+.main__container {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 1em;
+  border-top: 4px solid var(--color-primary);
+}
+
+.main__container > h2 {
+  padding-top: 0.2em;
+  padding-bottom: 0.5em;
+}
+
+.main__date {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    --font-size: 12px;
+  }
+
+  .main__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main__header > h1 {
+    margin: 0.5em 0;
+  }
+
+  .main__search {
+    width: 100%;
+  }
+}
