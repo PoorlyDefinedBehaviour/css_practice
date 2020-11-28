@@ -1,0 +1,62 @@
+:root {
+  --color-primary: #6aeeb5;
+  --color-primary-hover: #29e6a7;
+  --color-primary-dark: #0a4542;
+  --color-gray100: #f0f7f8;
+  --color-gray200: #cfd8dc;
+
+  --radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-gray100);
+}
+
+.tooltip {
+  font-size: 4.5rem;
+  position: relative;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-primary);
+}
+
+.tooltip:hover {
+  color: var(--color-primary-dark);
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  font-size: 3rem;
+  color: #000;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0px 0px 10px var(--color-gray200);
+  left: -80%;
+  top: -100%;
+  clip-path: circle(0rem at center);
+  overflow: hidden;
+  transition: 300ms all ease-in;
+}
+
+.tooltip:hover::before {
+  clip-path: circle(20rem at center);
+  top: -130%;
+}
