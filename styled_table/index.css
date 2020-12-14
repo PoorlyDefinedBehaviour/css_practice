@@ -1,0 +1,60 @@
+:root {
+  --color-primary: #d0def2;
+  --color-primary-light: #f3f8fe;
+  --color-primary-dark: #a7bad3;
+  --color-gray100: #f9fbff;
+  --color-gray150: #f4f6fb;
+  --color-gray200: #eef1f6;
+  --color-gray300: #e1e5ee;
+  --color-gray400: #767b91;
+  --color-gray500: #4f546c;
+  --color-gray600: #2a324b;
+  --color-gray700: #161d34;
+
+  --radius: 0.2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: 14.4px;
+  font-family: Lato, sans-serif;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-gray500);
+  background-color: var(--color-primary-light);
+}
+
+table {
+  border-collapse: collapse;
+  box-shadow: 20px 20px 20px 5px var(--color-primary-dark);
+  background-color: #fff;
+  text-align: left;
+}
+
+table th {
+  background-color: var(--color-primary);
+  padding: 0.75rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+table td {
+  padding: 1rem 2rem;
+}
+
+table tr:nth-child(even) {
+  background-color: var(--color-primary-light);
+}
