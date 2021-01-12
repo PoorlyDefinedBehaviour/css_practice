@@ -1,0 +1,113 @@
+:root {
+  --color-primary: #0e48fe;
+  --color-primary-hover: #29e6a7;
+  --color-primary-dark: #039d69;
+  --color-gray100: #f9fbff;
+  --color-gray150: #f4f6fb;
+  --color-gray200: #eef1f6;
+  --color-gray300: #e1e5ee;
+  --color-gray400: #767b91;
+  --color-gray500: #4f5d6c;
+  --color-gray600: #2a324b;
+  --color-gray700: #161d34;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Andika New Basic", sans-serif;
+  height: 100vh;
+}
+
+.nav {
+  border-bottom: 1px solid var(--color-gray200);
+}
+
+.nav__toggle {
+  position: absolute;
+  cursor: pointer;
+  margin: 0rem 1rem;
+  right: 0;
+}
+
+.nav__toggle > svg {
+  width: 1.5rem;
+  fill: var(--color-gray600);
+}
+
+.nav__toggle .close {
+  display: none;
+}
+
+.nav__toggle .menu {
+  margin-top: 0.2rem;
+}
+
+.nav__checkbox {
+  display: none;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem;
+}
+
+.nav__menu li {
+  display: none;
+  cursor: pointer;
+}
+
+.nav__menu li:first-child {
+  margin-right: auto;
+  display: block;
+}
+
+.nav__menu a {
+  color: inherit;
+  font-size: 1.2rem;
+}
+
+.nav__menu svg {
+  width: 1.5rem;
+  fill: var(--color-gray600);
+}
+
+.nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+
+.nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+.nav__checkbox:checked ~ label.nav__toggle .menu {
+  display: none;
+}
+
+@media only screen and (min-width: 560px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__menu {
+    flex-direction: row;
+  }
+
+  .nav__menu li {
+    display: block;
+  }
+}
